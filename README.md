@@ -16,7 +16,7 @@ This project demonstrates how to display "Hello Rust" on an SSD1306 OLED display
 - `cargo-generate` installed
 - The following Rust crates:
   - `cortex-m-rt`
-  - `embedded_graphics`
+  - `embedded-graphics`
   - `fugit`
   - `panic-halt`
   - `rp2040-hal`
@@ -30,3 +30,16 @@ Connect the Raspberry Pi Pico to the SSD1306 display as follows:
 - GPIO5 (Pico) to SCL (Display)
 - GND (Pico) to GND (Display)
 - VBUS (Pico) to VCC (Display)
+
+## Building and Running
+
+1. Ensure you have the Rust toolchain installed. If not, install it using [rustup](https://rustup.rs/).
+2. Add the nightly toolchain and target for ARM Cortex-M0+:
+   ```sh
+   rustup toolchain install nightly
+   rustup target add thumbv6m-none-eabi
+   ```
+Alternatively, to run the project directly on the Raspberry Pi Pico using cargo run, use the following command:  
+     ```sh
+    cargo run --bin oled
+    ```
